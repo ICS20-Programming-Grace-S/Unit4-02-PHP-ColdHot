@@ -54,7 +54,7 @@
       if ($degCelsius >= MAX) {
         echo " <center> Something is off... either glaciers are disappearing or you're a liar!!!!!!!!!! </center> ";
       } else if ($degCelsius <= MIN_TEMP){
-          echo "<center> It’s extremely cold outside. Are you sure your still alive?</center> ";
+          echo "<center> It’s extremely cold outside. Are you sure you're still alive?</center> ";
       } else if ($degCelsius >= MIN) {
           echo " <center> It is going to be a hot day!!! Wear sunglasses and light outerwear.</center> ";
       } else  {
