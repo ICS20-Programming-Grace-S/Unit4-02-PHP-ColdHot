@@ -24,8 +24,8 @@
   <body>
     
     <!-- PHP echo to print the html to the page -->
-    <center><h1><?php 
-			echo "Enter Degrees in Celsius";?></h1></center>
+    <h1><?php 
+			echo "Enter Degrees in Celsius";?></h1>
 
     <!-- Image -->
     <?php
@@ -34,19 +34,19 @@
  
     <!-- Buttons and Text Field -->
     <br>
-    <center><form method= "post">
-      Temperature in Celsius: <input type="number" name="degCelsius">
+    <form method= "post">
+      Temperature in Celsius: <input type="number" step="any" name="degCelsius">
       <br>
       <br>
-      <input type="submit" value="Display Temperature Results" />
-    </form></center>
+      <input type="submit" name="submit" value="Display Temperature Results" />
+    </form>
     <br>
     <br>
 
     <?php
-
-    	// get the input from text field
-      define("MIN", 15);
+      if(isset($_POST['submit'])) {
+           
+        define("MIN", 15);
       define("MIN_TEMP", -50);
       define("MAX", 50);
     	$degCelsius = ($_POST['degCelsius']);
@@ -54,11 +54,13 @@
       if ($degCelsius >= MAX) {
         echo " <center> Something is off... either glaciers are disappearing or you're a liar!!!!!!!!!! </center> ";
       } else if ($degCelsius <= MIN_TEMP){
-          echo "<center> It’s extremely cold outside. Are you sure you're still alive?</center> ";
+          echo "<center> It's extremely cold outside. Are you sure you’re still alive?</center> ";
       } else if ($degCelsius >= MIN) {
           echo " <center> It is going to be a hot day!!! Wear sunglasses and light outerwear.</center> ";
       } else  {
           echo " <center> It is going to be a cold day!!! Wear a jacket or sweater. </center> ";
+      }
+
       }
     ?>   
     <br>
